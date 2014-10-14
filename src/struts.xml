@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name = "strust.devMode" value = "true"></constant>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<package name = "menu" extends = "struts-default" namespace ="/">
+	<default-action-ref name="index" />
+		<action name="index" class="menu.selectOperation" method="indexAll">
+			<result name="index_success">/myindex.jsp</result>
+		</action>
+		<action name = "menu1" class = "menu.selectOperation" method = "addMenu">
+			<result name ="add">/add.jsp</result>
+		</action>
+		<action name = "menu2" class = "menu.selectOperation" method = "searchMenu">
+			<result name = "search">/search.jsp</result>
+		</action>
+		<action name="search" class="menu.selectOperation" method="searchByAuthor">
+			<result name="search_success">/search_success.jsp</result>
+			<result name="search_error">/search_error.jsp</result>
+		</action>
+		<action name="add" class="menu.selectOperation" method="add">
+			<result name="add_success">/add_success.jsp</result>
+			<result name="add_error">/add_error.jsp</result>
+		</action>
+		<action name="update" class="menu.selectOperation" method="update">
+			<result name="update_success">/update_success.jsp</result>
+			<result name="update_error">/update_error.jsp</result>
+		</action>
+		<action name="updateInput" class="menu.selectOperation" method="updateMenu">
+			<result name="updateInput">/updateInput.jsp</result>
+		</action>
+		
+		<action name="delete" class="menu.selectOperation" method="delete">
+			<result name="delete_success">/delete_success.jsp</result>
+			<result name="delete_error">/delete_error.jsp</result>
+		</action>
+		<action name="showMore" class="menu.selectOperation" method="showMoreInfo">
+			<result name="show_success">/showMore.jsp</result>
+		</action>
+	</package>
+	
+</struts>	
